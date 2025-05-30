@@ -27,6 +27,7 @@ def metade(preco, f=True):
 
 
 def resumo(p, porc_more, porc_less, f=True):
+
     list = [
         ('Preco Analisado:', p), 
         ('Dobro do preco', dobro(p)), 
@@ -37,10 +38,10 @@ def resumo(p, porc_more, porc_less, f=True):
 
     print('-' * 30)
     print('RESUMO DO VALOR')
-    print('-' * 30)
-
+    
     print('-' * 30)
     for k, v in list:
+        v = str(v).replace('.', ',')
         print(f'{k:<20} {v}')
     print('-' * 30)
     

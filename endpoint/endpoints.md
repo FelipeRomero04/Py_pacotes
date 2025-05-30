@@ -15,6 +15,9 @@ Ex109: Implementar novo parametro booleano, se o valores aparecerão formatados 
 Ex110: Add função resumo(), formatando o texto em formato de tabela.
 Param: preco, aumento, e diminuir
 
+Fazer com que valores com virgulas sejam aceitos, creio que transformando o valor em str e passando replace funcione
+
+
 Ex111: Criar um pacote, com dados e moeda, colocando todos exercicios anteriores no modulo de moedas dentro do pacote, mantendo o funcionamento
 
 Ex112: No modulo de Dados, criar função leiadinheiro(), funciona igual input, com validação para aceitar apenas valores monetários.
