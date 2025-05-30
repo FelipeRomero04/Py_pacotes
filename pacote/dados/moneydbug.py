@@ -17,18 +17,38 @@ from decimal import Decimal
 #         return f'Erro! O valor {p} é invalido, tente novamente.'
 
 def leia_dinheiro(msg):
-    p = float(input(msg))
-
-    if ValueError:
-        p = str(p).strip
-    if ',' in p:
-        p_split = p.split(',')
+    try:
+        p = float(input(msg))
+        return p
+    except ValueError:
+        p = str(p)
+        if ',' in p:
+            p_split = p.split(',')
         for v in p_split:
             if v.isnumeric():
                 continue
+            else:
+                return 'ERRO'
         p = '.'.join(p_split)
         return float(p)
-                
+    
+
+def leia_dinheiro(msg):
+    p = input(msg)
+
+    if ',' in p:
+        p_split = p.split(',')
+    
+        for v in p_split:
+            if v.isnumeric:
+                continue
+            return 'ERRO'
+        p = float('.'.join(p_split))
+        return p
+    try:
+        return float(p)
+    except ValueError:
+        print(f'Erro! {p} não é um valor válido.')            
 
 
 
