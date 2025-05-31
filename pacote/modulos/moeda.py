@@ -21,7 +21,7 @@ def dobro(preco, f=True):
 def metade(preco, f=True):
     half = preco / 2
 
-    if f:
+    if f: #formatar com cifrão ou não
         return (f'${half}')
     return half
 
@@ -29,15 +29,15 @@ def metade(preco, f=True):
 def resumo(p, porc_more, porc_less, f=True):
 
     list = [
-        ('Preco Analisado:', p), 
+        ('Preco Analisado:', f'${p}'), 
         ('Dobro do preco', dobro(p)), 
         ('Metade do preco', metade(p)), 
-        (f'{porc_more}', aumentar(p, porc_more)), 
-        (f'{porc_less}', diminuir(p, porc_less))
+        (f'{porc_more}% de aumento', aumentar(p, porc_more)), 
+        (f'{porc_less}% de redução', diminuir(p, porc_less))
         ]
 
     print('-' * 30)
-    print('RESUMO DO VALOR')
+    print(f'{'RESUMO DO VALOR':>22}')
     
     print('-' * 30)
     for k, v in list:
