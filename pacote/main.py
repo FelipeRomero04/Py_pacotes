@@ -1,5 +1,5 @@
-from modulos import moeda
-from dados.moneydbug import leia_dinheiro
+from .modulos import moeda
+from .dados.moneydbug import leia_dinheiro
  
 
 p = leia_dinheiro('Digite o preço: ')
