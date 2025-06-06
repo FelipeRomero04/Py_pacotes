@@ -1,24 +1,24 @@
-from sistema.utils import util
+from ..utils import util
 
-def register():
-    nome = input('Informe nome: ')
-    idade = input('Informe idade: ')
+def options(op, name='User', old='0'):
 
-    with open('usuarios.txt', 'a+', encoding='utf-8') as f:
-        f.writelines(f'{nome:<20} {idade}\n')
+    if op == '1':
+        def register(): 
+          
+            with open('usuarios.txt', 'a+', encoding='utf-8') as f:
+                f.writelines(f'{name:<20} {old} anos\n')
 
-
-
-def show_users():
-    with open('usuarios.txt', 'r', encoding='utf-8') as r:
-        read_file = r.read()
-
-    util.effect('PESSOAS CADASTRADAS')
-    print(read_file)
+            print(f'Novo registro de "{name}" adicionado.')
+        return register()
 
 
-'''Resolver problema de modulenotfound'''
+    if op == '2':
+        def show_users():
+            with open('usuarios.txt', 'r', encoding='utf-8') as r:
+                read_file = r.read()
 
+            util.effect('PESSOAS CADASTRADAS')
+            print(read_file)
+        return show_users()
 
-show_users()
 

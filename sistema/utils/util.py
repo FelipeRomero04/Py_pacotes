@@ -6,9 +6,8 @@ def effect(msg):
 
 
 def menu():
-    print('-' * 30)
-    print('MENU PRINCIPAL'.center(30))
-    print('-' * 30)
+   
+    effect('MENU PRINCIPAL')
 
     print('''1 - Ver pessoas cadastradas
         2 - Cadastrar nova usuário
@@ -16,3 +15,4 @@ def menu():
         3 - Sair do Sistema''')
     
     option = input('Sua opção: ')
+    return option
