@@ -2,40 +2,20 @@ from .dados import db
 from .utils import util
 from time import sleep
 
-cont = 0
-
-while cont < 5:
+while True:
     try:
-        option = util.menu().strip()  #chama menu e retorna valor da option
+        name = util.debug_dados_name
+        old = util.debug_dados_old
 
-        if not option.isnumeric() or not option in (('1'), ('2'), ('3')):
-            print('ERRO! valor inválido')
-            continue
-    except KeyboardInterrupt:
-        print('O programa foi interrompido pelo usúario...')
-        break
+        op = util.menu()
 
-    
-    
-    try:  #TESTAR COLOCAR O NOME E IDADE NO MESMO TRY TO CANSADO
-        name = input('Informe o nome: ')
-        if any(l for l in name if l.isnumeric):
-            print('Erro Va')
-        old = input('Informe idade: ')
+        db.options(op, name, old) 
         
+        sleep(2)
+        
+        if op == '3':
+            break
 
-
-
-    db.options(option, name, old) 
-    sleep(2)
-    
-    
-
-# try:
-    #     option = int(util.menu().strip())
-    # except Exception or 1 <= option <= 3:
-    #     print('Valor invalido')
-    #     continue
-    # except KeyboardInterrupt:
-    #     print('O programa foi interrompido pelo usuário...')
-    #     break
+    except KeyboardInterrupt:
+        print('\nERRO! O usuário interrompeu o programa...')
+        break
