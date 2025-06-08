@@ -13,7 +13,7 @@ while True:
         
         sleep(2)
         
-        if op == '3':
+        if op == '4':
             break
 
     except KeyboardInterrupt:

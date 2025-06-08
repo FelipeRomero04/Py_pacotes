@@ -15,7 +15,7 @@ def options(op, n, o):
         return register()
 
 
-    if op == '2':
+    elif op == '2':
         def show_users():
             with open('usuarios.txt', 'r', encoding='utf-8') as r:
                 read_file = r.read()
@@ -24,14 +24,33 @@ def options(op, n, o):
             print(read_file)
         return show_users()
     
-    if op == '3':
+    elif op == '3':
+        def clean_list():
+            name = n()
+            old = o()
+
+            with open('usuarios.txt', 'w+', encoding='utf-8') as c:
+                c.writelines(f'{name:<20} {old} anos\n')
+
+            print('Uma nova lista, com nome e idade informados foi criada!')
+        return clean_list()
+
+
+
+    elif op == '4':
         def exit_sistem():
-            print('Saindo do sistema...\nAté mais!')
+            print('\nSaindo do sistema...\nAté mais!')
             
         return exit_sistem()
 
 
+    
 
+
+
+
+
+#Puxar name e idade novamentes e passa como parametro para register chamando ela, fazendo a atribuição a lista de forma permanente
 #função pra limpar a lista e escrever outra
             
 
